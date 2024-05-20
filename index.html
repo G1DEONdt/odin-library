@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="header-container">G1DEON's Library</h1>
+    </header>
+    <main>
+        <button class="add">Add Book!</button>
+        <div class="grid-container">
+            <div class="card">
+                <img src="images/Harry_Potter_and_the_Prisoner_of_Azkaban.jpg" alt="cover for harry potter">
+                <h2>Harry Potter: The Prisoner of Azkaban</h2>
+                <p>J.K Rowling</p>
+                <p><span>182</span> pages</p>
+                <div class="card-buttons">
+                    <button onclick="" type="button">Delete</button>
+                    <button onclick="" type="button" class="read">Read</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <form id="form">
+                <h2>Enter a new book</h2>
+                <!-- <label for="image">Book cover: </label>
+                <input type="file" name="image" id="image"> -->
+                <label for="title">Book title: </label>
+                <input type="text" name="title" id="title" required>
+                <label for="author">Author: </label>
+                <input type="text" name="author" id="author" required>
+                <label for="pageCount">Page count:</label>
+                <input type="number" name="pageCount" id="pageCount" required>
+                <label for="status">Status: </label>
+                <select name="status" id="status" required>
+                    <option value="unread">Unread</option>
+                    <option value="read">Read</option>
+                </select>
+                <input type="button" class="cancel" value="Cancel"></input>
+                <input type="button" class="submit" value="Submit!"></input>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
