@@ -40,7 +40,7 @@ function addBookToLibrary() {
     const author = document.getElementById("author").value;
     const pageCount = document.getElementById("pageCount").value;
     const status = document.getElementById("status").value;
-    myLibrary.push(new Book(title, author, pageCount, status));
+    myLibrary.push(new Book(id, title, author, pageCount, status));
 }
 
 function redrawGrid() {
@@ -53,8 +53,8 @@ function redrawGrid() {
             <p>${myLibrary[x].author}</p>
             <p><span>${myLibrary[x].pageCount}</span> pages</p>
             <div class="card-buttons">
-                <button onclick="${myLibrary[x].removeBook()}" type="button">x</button>
-                <button onClick="${myLibrary[x].toggleStatus()}" type="button">${capitaliseFirstLetter(myLibrary[x].status)}</button>
+                <button onclick="" type="button">x</button>
+                <button onClick="" type="button">Read</button>
             </div>
         </div>
         `
@@ -63,16 +63,14 @@ function redrawGrid() {
     
 }
 
-// redrawGrid();
+
+function removeCard() {
+    
+}
 
 function capitaliseFirstLetter(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// function removeBook(index) {
-//     myLibrary.pop(index);
-//     redrawGrid();
-// }
 
 function resetForm() {
     form.reset();
