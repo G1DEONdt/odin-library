@@ -54,8 +54,8 @@ function redrawGrid() {
             <p>${myLibrary[x].author}</p>
             <p><span>${myLibrary[x].pageCount}</span> pages</p>
             <div class="card-buttons">
-                <button onclick="myLibrary[${x}].removeBook()" type="button">x</button>
-                <button onclick="myLibrary[${x}].toggleStatus()" type="button" class="toggle ${myLibrary[x].status}">${myLibrary[x].status}</button>
+                <button onclick="myLibrary[${x}].removeBook()" type="button">Delete</button>
+                <button onclick="myLibrary[${x}].toggleStatus()" type="button" class="toggle ${myLibrary[x].status}">${capitaliseFirstLetter(myLibrary[x].status)}</button>
             </div>
         </div>
         `
