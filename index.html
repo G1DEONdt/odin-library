@@ -21,16 +21,29 @@
                 <!-- <label for="image">Book cover: </label>
                 <input type="file" name="image" id="image"> -->
                 <label for="title">Book title: </label>
-                <input type="text" name="title" id="title" required>
+                <div class="input-container">
+                    <span class="title-error error-message hidden">[!] Please fill out this field.</span>
+                    <input type="text" name="title" id="title" required>
+                </div>
+
                 <label for="author">Author: </label>
-                <input type="text" name="author" id="author" required>
+                <div class="input-container">
+                    <span class="author-error error-message hidden"> [!] Please fill out this field.</span>
+                    <input type="text" name="author" id="author" required>
+                </div>
+
                 <label for="pageCount">Page count:</label>
-                <input type="number" name="pageCount" id="pageCount" required>
+                <div class="input-container">
+                    <span class="page-error error-message hidden"> [!] Please fill out this field.</span>
+                    <input type="number" name="pageCount" id="pageCount" required>
+                </div>
+
                 <label for="status">Status: </label>
                 <select name="status" id="status" required>
                     <option value="unread">Unread</option>
                     <option value="read">Read</option>
                 </select>
+
                 <input type="button" class="cancel" value="Cancel"></input>
                 <input type="button" class="submit" value="Submit!"></input>
             </form>
