@@ -5,6 +5,15 @@ const button = document.querySelector(".add");
 const submit = document.querySelector(".submit");
 const cancel = document.querySelector(".cancel");
 let gridNodeList = document.querySelectorAll(".toggle");
+
+
+const title = document.querySelector("#title");
+const titleError = document.querySelector(".title-error");
+const author = document.querySelector("#author");
+const authorError = document.querySelector(".author-error");
+const pages = document.querySelector("#pageCount");
+const pagesError = document.querySelector(".page-error");
+
 const myLibrary = [{
 }];
 
@@ -54,7 +63,7 @@ function redrawGrid() {
             <p>${myLibrary[x].author}</p>
             <p><span>${myLibrary[x].pageCount}</span> pages</p>
             <div class="card-buttons">
-                <button onclick="myLibrary[${x}].removeBook()" type="button">Delete</button>
+                <button onclick="myLibrary[${x}].removeBook()" type="button" class="delete">Delete</button>
                 <button onclick="myLibrary[${x}].toggleStatus()" type="button" class="toggle ${myLibrary[x].status}">${capitaliseFirstLetter(myLibrary[x].status)}</button>
             </div>
         </div>
@@ -80,16 +89,34 @@ function refreshNodeList() {
     gridNodeList = document.querySelectorAll(".toggle");
 }
 
-
 button.addEventListener("click", () => {
     formContainer.classList.add("active");
 });
 
+// At least it works :) 
 submit.addEventListener("click", () => {
-    addBookToLibrary();
-    redrawGrid();
-    resetForm();
-    closeForm();
+    if (title.value.length == 0) {
+        title.classList.add("error");
+        titleError.classList.remove("hidden");
+    } else if (author.value.length == 0) {
+        title.classList.remove("error");
+        titleError.classList.add("hidden");
+        author.classList.add("error");
+        authorError.classList.remove("hidden");
+    } else if (pages.value.length == 0) {
+        author.classList.remove("error");
+        authorError.classList.add("hidden");
+        pages.classList.add("error");
+        pagesError.classList.remove("hidden");
+    } else {
+        pages.classList.remove("error");
+        pagesError.classList.add("hidden");
+
+        addBookToLibrary();
+        redrawGrid();
+        resetForm();
+        closeForm();
+    }
 })
 
 cancel.addEventListener("click", () => {
